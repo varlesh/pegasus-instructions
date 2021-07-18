@@ -96,7 +96,7 @@ where:
 
 ### Now you can play video on MPV and mark timeline for cutting:
 ```
-mpv /path/to/your/roms/wii/media/videos/video.mp4
+mpv video.mp4
 ```
 
 ### Cut the video to any duration (1 min on example):
