@@ -1,5 +1,9 @@
 Pegasus on Linux with Yuzu, Dolphin, Citra and etc
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/varlesh/pegasus-instructions/master/preview.gif" alt="preview"/>
+</p>
+
 ## Install emulators, Pegasus, Skyscraper, MPV, Youtube-dl, FFmpeg & AntimicroX (additional):
 ```
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub
