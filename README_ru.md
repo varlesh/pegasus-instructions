@@ -1,4 +1,4 @@
-Pegasus на Linux с Yuzu, Dolphin, Citra и т.д.
+Pegasus на Linux с Yuzu, Dolphin, Citra, melonDS, PCSX2, PPSSPP и т.д.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/varlesh/pegasus-instructions/master/preview.gif" alt="preview"/>
@@ -7,7 +7,7 @@ Pegasus на Linux с Yuzu, Dolphin, Citra и т.д.
 ## Установите эмуляторы, Pegasus, Skyscraper, MPV, Youtube-dl, FFmpeg и AntimicroX (дополнительно):
 ```
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub
-flatpak install org.pegasus_frontend.Pegasus org.DolphinEmu.dolphin-emu org.citra_emu.citra org.yuzu_emu.yuzu io.github.antimicrox.antimicrox
+flatpak install org.pegasus_frontend.Pegasus org.DolphinEmu.dolphin-emu org.citra_emu.citra org.yuzu_emu.yuzu net.kuribo64.melonDS org.ppsspp.PPSSPP net.pcsx2.PCSX2 io.github.antimicrox.antimicrox
 sudo apt install git mpv youtube-dl ffmpeg build-essential qt5-default
 mkdir -p /tmp/skysource && /tmp/skysource
 wget -q -O - https://raw.githubusercontent.com/muldjord/skyscraper/master/update_skyscraper.sh | bash
@@ -58,6 +58,8 @@ Skyscraper -p wii -i "/путь/к/вашим/ромам/wii" -f pegasus
 
 https://gamesdb.launchbox-app.com
 
+https://www.mobygames.com
+
 https://www.gametdb.com
 
 https://www.screenscraper.fr
@@ -68,7 +70,7 @@ http://www.thegamesdb.net
 ```
 game: Mario Kart Wii
 file: /путь/к/вашим/ромам/wii/Mario Kart Wii.iso
-description: Mario and friends once again jump into the seat of their go-kart machines for the first Wii installment of this popular franchise. New features this year are an online racing mode, new motorbike vehicle types, a special balancing system for new and veteran players, and (in its initial release) a special Mario Kart wheel packaged with the game.
+description: Марио и его друзья снова запрыгивают в свои картинговые авто для первого выпуска этой популярной франшизы на Wii. Среди нововведений этого года - режим онлайн-гонок, новые типы мотоциклов, специальная система балансировки для начинающих и опытных игроков и (в первоначальном выпуске) специальное колесо Mario Kart, входящее в комплект игры.
 release: 2008-04-27
 developer: Nintendo
 publisher: Nintendo
@@ -126,10 +128,9 @@ assets.video: /путь/к/вашим/ромам/wii/media/videos/your_game.mp4
 
 ## Настроить геймпады и эмуляторы.
 
-### Откройте каждый эмулятор и настройте их.
+Откройте каждый эмулятор и настройте их.
 
-### Установите полноэкранный режим в эмуляторах (если они не поддерживают такую опцию в терминале):
-
+Установите полноэкранный режим в эмуляторах (если они не поддерживают такую опцию в терминале):
 
 В Ryujinx нужно изменить в **~/.config/Ryujinx/Config.json** на `"start_fullscreen": true,`
 
@@ -139,15 +140,19 @@ fullscreen=true
 fullscreen\default=false
 ```
 
-## Горячая клавиша закрытия эмулятора.
+В PCSX2 нужно изменить в **~/.var/app/net.pcsx2.PCSX2/config/PCSX2/inis/PCSX2_ui.ini** на `DefaultToFullscreen=enabled`
 
-Теперь вы можете установить Alt+F4 на свободную кнопку на геймпаде.
+В PPSSPP нужно изменить в **~/.var/app/org.ppsspp.PPSSPP/config/ppsspp/PSP/SYSTEM/ppsspp.ini** на `FullScreen = True`
 
-Откройте AntimicroX и установите Alt+F4. Для удобного использования закройте приложение в трей.
+melonDS не имеет опции или команды для полноэкранного режима, установите F11 в настройках программы.
 
-Если на вашем геймпаде недостаточно кнопок, вы можете установить комбинацию Start(Alt) + Select(F4).
+## Горячие клавиши для эмуляторов.
 
-Также вы можете установить полноэкранный режим с помощью клавиши F11, если это необходимо.
+Теперь вы можете установить комбинации клавиш закрытия и полноэкранного режима на свободные кнопки вашего геймпада.
+
+Откройте AntimicroX и установите на L3 (Alt+F4) для закрытия и R3 (F11) для полного экрана.
+
+Эти кнопки очень редко используются в играх и вполне подходят под эти задачи.
 
 ## Рекомендации
 

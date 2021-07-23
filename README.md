@@ -1,4 +1,4 @@
-Pegasus on Linux with Yuzu, Dolphin, Citra and etc
+Pegasus on Linux with Yuzu, Dolphin, Citra, melonDS, PCSX2, PPSSPP and etc
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/varlesh/pegasus-instructions/master/preview.gif" alt="preview"/>
@@ -7,7 +7,7 @@ Pegasus on Linux with Yuzu, Dolphin, Citra and etc
 ## Install emulators, Pegasus, Skyscraper, MPV, Youtube-dl, FFmpeg & AntimicroX (additional):
 ```
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub
-flatpak install org.pegasus_frontend.Pegasus org.DolphinEmu.dolphin-emu org.citra_emu.citra org.yuzu_emu.yuzu io.github.antimicrox.antimicrox
+flatpak install org.pegasus_frontend.Pegasus org.DolphinEmu.dolphin-emu org.citra_emu.citra org.yuzu_emu.yuzu net.kuribo64.melonDS org.ppsspp.PPSSPP net.pcsx2.PCSX2 io.github.antimicrox.antimicrox
 sudo apt install git mpv youtube-dl ffmpeg build-essential qt5-default
 mkdir -p /tmp/skysource && /tmp/skysource
 wget -q -O - https://raw.githubusercontent.com/muldjord/skyscraper/master/update_skyscraper.sh | bash
@@ -57,6 +57,8 @@ Skyscraper -p wii -i "/path/to/your/roms/wii" -f pegasus
 ## Now you can check all your metadata's and update/fix that with popular skrapper sites:
 
 https://gamesdb.launchbox-app.com
+
+https://www.mobygames.com
 
 https://www.gametdb.com
 
@@ -126,27 +128,31 @@ assets.video: /path/to/your/roms/wii/media/videos/your_game.mp4
 
 ## Configure gamepads & emulators.
 
-### Open any emulator and configure gamepads.
+Open any emulator and configure gamepads.
 
-### Set fullscreen mode on emulators (when not support command option):
+Set fullscreen mode on emulators (when not support command option):
 
 Ryujinx need change value on **~/.config/Ryujinx/Config.json** to `"start_fullscreen": true,`
 
-Citra need change value **~/.var/app/org.citra_emu.citra/config/citra-emu/qt-config.ini** to:
+Citra need change value on **~/.var/app/org.citra_emu.citra/config/citra-emu/qt-config.ini** to:
 ```
 fullscreen=true
 fullscreen\default=false
 ```
 
-## Hotkey close emulator.
+PCSX2 need change value on **~/.var/app/net.pcsx2.PCSX2/config/PCSX2/inis/PCSX2_ui.ini** to `DefaultToFullscreen=enabled`
 
-Now you can set Alt+F4 to free button on your gamepad.
+PPSSPP need change value on **~/.var/app/org.ppsspp.PPSSPP/config/ppsspp/PSP/SYSTEM/ppsspp.ini** to `FullScreen = True`
 
-Open AntimicroX and set Alt+F4.For comphortable usage close application to tray.
+melonDS not have option or command for fullscreen mode, set F11 on application settings.
 
-If your gamepad not have enough keys you can set combination Start(Alt)+Select(F4)
+## Hotkeys for emulators.
 
-Also you can set fullscreen key F11 if needed.
+Now you can set close & fullscreen keys to free button on your gamepad.
+
+Open AntimicroX and set L3 (Alt+F4) for close and R3 (F11) for fullscreen.
+
+These buttons are very rarely used in games and are quite suitable for these tasks.
 
 ## Recommendations
 
