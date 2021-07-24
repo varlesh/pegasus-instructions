@@ -132,17 +132,26 @@ Open any emulator and configure gamepads.
 
 Set fullscreen mode on emulators (when not support command option):
 
-Ryujinx need change value on **~/.config/Ryujinx/Config.json** to `"start_fullscreen": true,`
-
-Citra need change value on **~/.var/app/org.citra_emu.citra/config/citra-emu/qt-config.ini** to:
+Ryujinx:
 ```
-fullscreen=true
-fullscreen\default=false
+sed -i s/\"start_fullscreen\"\:\ false/\"start_fullscreen\"\:\ true/g ~/.config/Ryujinx/Config.json
 ```
 
-PCSX2 need change value on **~/.var/app/net.pcsx2.PCSX2/config/PCSX2/inis/PCSX2_ui.ini** to `DefaultToFullscreen=enabled`
+Citra:
+```
+sed -i s/fullscreen=false/fullscreen=true/g ~/.var/app/org.citra_emu.citra/config/citra-emu/qt-config.ini
+sed -i s/fullscreen\\\\default=true/fullscreen\\\\default=false/g ~/.var/app/org.citra_emu.citra/config/citra-emu/qt-config.ini
+```
 
-PPSSPP need change value on **~/.var/app/org.ppsspp.PPSSPP/config/ppsspp/PSP/SYSTEM/ppsspp.ini** to `FullScreen = True`
+PCSX2:
+```
+sed -i s/DefaultToFullscreen=disabled/DefaultToFullscreen=enabled/g ~/.var/app/net.pcsx2.PCSX2/config/PCSX2/inis/PCSX2_ui.ini
+```
+
+PPSSPP:
+```
+sed -i s/FullScreen\ =\ False/FullScreen\ =\ True/g ~/.var/app/org.ppsspp.PPSSPP/config/ppsspp/PSP/SYSTEM/ppsspp.ini
+```
 
 melonDS not have option or command for fullscreen mode, set F11 on application settings.
 
