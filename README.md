@@ -7,7 +7,7 @@ Pegasus on Linux with Yuzu, Dolphin, Citra, melonDS, PCSX2, PPSSPP and etc
 ## Install emulators, Pegasus, Skyscraper, MPV, Youtube-dl, FFmpeg & AntimicroX (additional):
 ```
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub
-flatpak install org.pegasus_frontend.Pegasus org.DolphinEmu.dolphin-emu org.citra_emu.citra org.yuzu_emu.yuzu net.kuribo64.melonDS org.ppsspp.PPSSPP net.pcsx2.PCSX2 io.github.antimicrox.antimicrox
+flatpak install org.pegasus_frontend.Pegasus org.DolphinEmu.dolphin-emu org.citra_emu.citra org.yuzu_emu.yuzu net.kuribo64.melonDS org.ppsspp.PPSSPP net.pcsx2.PCSX2 net.rpcs3.RPCS3 io.github.antimicrox.antimicrox
 sudo apt install git mpv youtube-dl ffmpeg build-essential qt5-default
 mkdir -p /tmp/skysource && /tmp/skysource
 wget -q -O - https://raw.githubusercontent.com/muldjord/skyscraper/master/update_skyscraper.sh | bash
@@ -54,7 +54,7 @@ Skyscraper -p wii -i "/path/to/your/roms/wii" -f pegasus
 
 **NOTE:** Switch roms not supported
 
-## Now you can check all your metadata's and update/fix that with popular skrapper sites:
+## Now you can check all your metadata's and update/fix that with popular scraper sites:
 
 https://gamesdb.launchbox-app.com
 
@@ -143,6 +143,11 @@ sed -i s/fullscreen=false/fullscreen=true/g ~/.var/app/org.citra_emu.citra/confi
 sed -i s/fullscreen\\\\default=true/fullscreen\\\\default=false/g ~/.var/app/org.citra_emu.citra/config/citra-emu/qt-config.ini
 ```
 
+RPCS3:
+```
+sed -i s/fullscreen\ mode\:\ false/fullscreen\ mode\:\ true/g ~/.var/app/net.rpcs3.RPCS3/config/rpcs3/config.yml
+```
+
 PCSX2:
 ```
 sed -i s/DefaultToFullscreen=disabled/DefaultToFullscreen=enabled/g ~/.var/app/net.pcsx2.PCSX2/config/PCSX2/inis/PCSX2_ui.ini
@@ -153,7 +158,7 @@ PPSSPP:
 sed -i s/FullScreen\ =\ False/FullScreen\ =\ True/g ~/.var/app/org.ppsspp.PPSSPP/config/ppsspp/PSP/SYSTEM/ppsspp.ini
 ```
 
-melonDS not have option or command for fullscreen mode, set F11 on application settings.
+melonDS not have option or command for fullscreen mode, set F11 on application settings or use this [fork](https://github.com/Anuskuss/melonDS/actions).
 
 ## Hotkeys for emulators.
 
